@@ -1,0 +1,10 @@
+{"algorithm":"KNN (Bun)","dataset":"ToyDataset","fitTimeMs":0.37779999999997926,"predictTimeMs":8.521200000000022,"accuracy":1,"memoryMB":112.39453125}
+{"algorithm":"KNN (Bun)","dataset":"ToyDataset","fitTimeMs":0.8462999999999852,"predictTimeMs":1.1229999999999905,"accuracy":1,"memoryMB":112.62109375}
+{"algorithm":"KNN (Bun)","dataset":"ToyDataset","fitTimeMs":0.24550000000000693,"predictTimeMs":0.6098999999999961,"accuracy":1,"memoryMB":112.72265625}
+{"algorithm":"KNN (Bun)","dataset":"Iris","fitTimeMs":0.21330000000000382,"predictTimeMs":7.760099999999994,"accuracy":1,"memoryMB":132.80078125}
+{"algorithm":"KNN (Bun)","dataset":"ToyDataset","fitTimeMs":0.3002999999999929,"predictTimeMs":1.0712000000000046,"accuracy":1,"memoryMB":112.56640625}
+{"algorithm":"KNN (Bun)","dataset":"Iris","fitTimeMs":0.17139999999999134,"predictTimeMs":6.549500000000009,"accuracy":1,"memoryMB":133.03515625}
+{"algorithm":"KNN (Bun)","dataset":"ToyDataset","fitTimeMs":0.5647999999999911,"predictTimeMs":1.6213999999999942,"accuracy":1,"memoryMB":112.5546875}
+{"algorithm":"KNN (Bun)","dataset":"Iris","fitTimeMs":0.27129999999999654,"predictTimeMs":8.14240000000001,"accuracy":1,"memoryMB":133.9765625}
+{"algorithm":"KNN (Bun)","dataset":"ToyDataset","fitTimeMs":0.2685999999999922,"predictTimeMs":0.9660999999999831,"accuracy":1,"memoryMB":112.53125}
+{"algorithm":"KNN (Bun)","dataset":"Iris","fitTimeMs":0.29849999999999,"predictTimeMs":9.077300000000008,"accuracy":1,"memoryMB":134.26953125}
