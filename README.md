@@ -112,3 +112,38 @@ import { benchmarkAlgo } from "../src/utils/benchmark";
 const res = await benchmarkAlgo(algo, split.Xtrain, split.ytrain, split.Xtest, split.ytest, "YourAlgo (Bun)", "YourDataset");
 console.table([{ algo: res.algorithm, dataset: res.dataset, fit: `${res.fitTimeMs.toFixed(2)} ms`, predict: `${res.predictTimeMs.toFixed(2)} ms`, acc: res.accuracy.toFixed(3) }]);
 ```
+
+### Benchmark output
+
+- Running `bun run bench` prints a table per dataset with times in ms and accuracy.
+- It also prints a predictions table comparing `truth` vs `pred` for test rows.
+
+Example predictions output:
+
+```text
+Predictions (ToyDataset):
+┌─────────┬───────┬───────┬──────┐
+│ (index) │ index │ truth │ pred │
+├─────────┼───────┼───────┼──────┤
+│    0    │   0   │  'A'  │ 'A'  │
+│    1    │   1   │  'B'  │ 'B'  │
+└─────────┴───────┴───────┴──────┘
+```
+
+## Data splitting
+
+Use `trainTestSplit(X, y, testSize, seed)` for a simple randomized split with a deterministic seed:
+
+```ts
+import { trainTestSplit } from "./src/utils/datasets";
+
+const { Xtrain, Xtest, ytrain, ytest } = trainTestSplit(X, y, 0.2, 42);
+```
+
+Want stratified splits? Strategy:
+- Group indices by label from `y`.
+- Shuffle each group with a seed.
+- Take the same proportion from each group for test/train.
+- Map indices back to `X` and `y`.
+
+If you want, open an issue and we can add `trainTestSplitStratified` as a utility.
