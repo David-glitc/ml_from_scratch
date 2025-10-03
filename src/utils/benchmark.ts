@@ -8,7 +8,7 @@ export interface BenchmarkResult {
 }
 
 export async function benchmarkAlgo<L extends string | number>(
-  algo: { fit: (X: ReadonlyArray<ReadonlyArray<number>>, y: ReadonlyArray<L>) => void; score: (X: ReadonlyArray<ReadonlyArray<number>>, y: ReadonlyArray<L>) => number },
+  algo: { fit: (X: ReadonlyArray<ReadonlyArray<number>>, y: ReadonlyArray<L>) => void | Promise<void>; score: (X: ReadonlyArray<ReadonlyArray<number>>, y: ReadonlyArray<L>) => number },
   Xtrain: ReadonlyArray<ReadonlyArray<number>>,
   ytrain: ReadonlyArray<L>,
   Xtest: ReadonlyArray<ReadonlyArray<number>>,
@@ -17,7 +17,7 @@ export async function benchmarkAlgo<L extends string | number>(
   dataset: string
 ): Promise<BenchmarkResult> {
   const startFit = performance.now();
-  algo.fit(Xtrain, ytrain);
+  await algo.fit(Xtrain, ytrain);
   const endFit = performance.now();
 
   const startPred = performance.now();

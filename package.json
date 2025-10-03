@@ -4,8 +4,11 @@
     "module": "src/index.ts",
     "scripts": {
         "bench": "bun run benchmarks/run_bun.ts",
+        "bench:quiet": "BENCH_PRINT_PREDICTIONS=0 bun run benchmarks/run_bun.ts",
+        "bench:preds": "BENCH_PRINT_PREDICTIONS=1 bun run benchmarks/run_bun.ts",
         "bench:bun": "bun run benchmarks/run_bun.ts",
         "bench:iris": "bun run download:iris && bun run benchmarks/run_bun.ts",
+        "download:housing": "bun run scripts/download_housing.ts",
         "bench:clean": "bash -lc '> benchmarks/results.jsonl'",
         "download:iris": "bun run scripts/download_iris.ts",
         "test": "bun test",
